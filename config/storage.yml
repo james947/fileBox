@@ -2,11 +2,8 @@
 #  service: Disk
 #  root: <%= Rails.root.join("tmp/storage") %>
 #
-#google:
-#  service: GCS
-#  project: fileBase
-#  credentials: <%= Rails.root.join("./gce.json") %>
-#  bucket: filebase
+#local:
+#  credentials: <%= Rails.root.join("tmp/storage") %>
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
@@ -20,7 +17,7 @@
  google:
    service: GCS
    project: fileBase
-   credentials: <%= Rails.root.join("./gcs.json") %>
+   credentials: <%= GOOGLE_APPLICATION_CREDENTIAL'] %>
    bucket: filebase
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
