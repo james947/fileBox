@@ -1,0 +1,27 @@
+<div class="form-upload">
+  <div class="form-content">
+    <div class="upload-content">
+      <h4>Upload File</h4>
+    </div>
+    <%= form_for @resource  do |f| %>
+      <%= f.file_field :image, :class => "form-field"  %>
+      <div class="actions">
+        <%= f.submit "Upload", :class => 'submit-btn' %>
+      </div>
+    <% end %>
+    <div class="data-table">
+      <table>
+        <tr>
+          <th>File Name</th>
+        </tr>
+        <%  @resources[0..3].each  do |data|%>
+        <tr>
+          <td>
+            <a class='image-url', href="<%= url_for(data.image.service_url) if data.image.attached? %>"><%= truncate(url_for data.image.service_url)%></a></td>
+        </tr>
+          <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+

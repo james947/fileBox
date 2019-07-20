@@ -1,6 +1,8 @@
-class ResourcesController < ApplicationController
+# frozen_string_literal: true
 
-  def new
+class ResourcesController < ApplicationController
+  def index
+    @resources = Resource.all.last(5)
     @resource = Resource.new
   end
 
@@ -11,6 +13,7 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     if @resource.save
+      @resource.image.service_url
       flash[:success] = 'The post was created!'
     else
       flash[:errors] = @resource.errors.full_messages
