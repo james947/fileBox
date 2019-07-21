@@ -1,3 +1,10 @@
 <nav class="navbar navbar-expand-lg nav">
-  <a class="navbar-brand" href="#">FileBox</a>
+  <div class="nav-link">
+    <a class="navbar-brand nav-brand" href="#">FileBox</a>
+    <% if current_user %>
+      <a class="current-user" href=""><%= current_user.email %></a>
+      <%= link_to 'Log Out', logout_path %>
+    <% else %>
+    <% end %>
+  </div>
 </nav>
