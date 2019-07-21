@@ -1,24 +1,45 @@
-# README
+FileBox
+====
+Upload your files to s3.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Features
+---
+The users can perform the following actions:
 
-Things you may want to cover:
+* Register
+* Login
+* Logout
+* Upload a file
+* More feaatures to be added soon.
 
-* Ruby version
+Setting up
+---
+1. Git clone the application
+2. Install dependencies `bundle install`
 
-* System dependencies
+3. Run migrations `rake db:migrate`.
+5. `Voila!!!` run the application `rails server`
 
-* Configuration
+Running tests
+---
+* `rspec` should run the tests.
 
-* Database creation
+Built With
+---
+1. Ruby on Rails
 
-* Database initialization
+Versioning
+---
+- Version 0.0.1
 
-* How to run the test suite
+Contributing
+---
+- allowed
 
-* Services (job queues, cache servers, search engines, etc.)
+Authors
+---
+* James Muriuki
 
-* Deployment instructions
-
-* ...
+Acknowledgments
+---
+N/A
