@@ -12,12 +12,14 @@
     <div class="data-table">
       <table>
         <tr>
-          <th>File Name</th>
+          <th>File link</th>
         </tr>
         <%  @resources[0..3].each  do |data|%>
         <tr>
           <td>
-            <a class='image-url', href="<%= url_for(data.image.service_url) if data.image.attached? %>"><%= truncate(url_for data.image.service_url)%></a></td>
+            <a class='image-url', href="<%= url_for(data.image.service_url) if data.image.attached? %>"><%= truncate(url_for data.image.service_url)%></a>
+            <%= link_to 'download', rails_blob_path(data.image, disposition: "attachment") %>
+          </td>
         </tr>
           <% end %>
       </table>
